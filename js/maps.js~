@@ -2,42 +2,56 @@
     var map;
     var layer_0;
     function initialize() {
-      map = new google.maps.Map(document.getElementById('map-canvas'), {
-        center: new google.maps.LatLng(-19.72280806988829, 6.152642000000014),
-        zoom: 2,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      });
-      layer_0 = new google.maps.FusionTablesLayer({
-        query: {
-          select: "col7",
-          from: "1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6"
-        },
-        map: map,
+    google.maps.visualRefresh = true;
+    var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
+      (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+    if (isMobile) {
+      var viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+    }
+    var mapDiv = document.getElementById('googft-mapCanvas');
+    mapDiv.style.width = isMobile ? '100%' : '500px';
+    mapDiv.style.height = isMobile ? '100%' : '300px';
+    var map = new google.maps.Map(mapDiv, {
+      center: new google.maps.LatLng(13.848600470447943, -37.441107999999986),
+      zoom: 3,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+
+    layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col7",
+        from: "1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6",
+        where: ""
+      },
+      options: {
         styleId: 3,
         templateId: 3
-      });
-	var legend = document.createElement('div');
-        legend.id = 'legend';
-        legendContent(legend);
-        legend.index = 1;
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
-    }
-// Generate the content for the legend
-      function legendContent(legend) {
-        var title = document.createElement('p');
-        title.innerHTML = legendTitle;
-        legend.appendChild(title);
-
-        for (var i in styles) {
-
-          var legendItem = document.createElement('div');
-
-          minMax.innerHTML = "4 + ' to ' + bucket.max";
-          legendItem.appendChild(minMax);
-
-          legend.appendChild(legendItem);
-        }
       }
+    });
+
+    if (isMobile) {
+      var legend = document.getElementById('googft-legend');
+      var legendOpenButton = document.getElementById('googft-legend-open');
+      var legendCloseButton = document.getElementById('googft-legend-close');
+      legend.style.display = 'none';
+      legendOpenButton.style.display = 'block';
+      legendCloseButton.style.display = 'block';
+      legendOpenButton.onclick = function() {
+        legend.style.display = 'block';
+        legendOpenButton.style.display = 'none';
+      }
+      legendCloseButton.onclick = function() {
+        legend.style.display = 'none';
+        legendOpenButton.style.display = 'block';
+      }
+    }
+  }
+
 
     function changeMap_0() {
       var whereClause;
