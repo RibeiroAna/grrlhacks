@@ -1,7 +1,8 @@
 
     var map;
     var layer_0;
-    function initialize() {
+
+ function initialize() {
     google.maps.visualRefresh = true;
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
       (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
@@ -53,13 +54,15 @@
   }
 
 
+
+
     function changeMap_0() {
       var whereClause;
       var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
       if (searchString != '--Select--') {
         whereClause = "'tipoproj' = '" + searchString + "'";
       }
-      layer_0.setOptions({
+      layer.setOptions({
         query: {
           select: "col7",
           from: "1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6",

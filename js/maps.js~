@@ -10,8 +10,8 @@
       viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
     }
     var mapDiv = document.getElementById('googft-mapCanvas');
-    mapDiv.style.width = isMobile ? '100%' : '500px';
-    mapDiv.style.height = isMobile ? '100%' : '300px';
+    mapDiv.style.width = isMobile ? '100%' : '1300px';
+    mapDiv.style.height = isMobile ? '100%' : '450px';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(13.848600470447943, -37.441107999999986),
       zoom: 3,
@@ -57,6 +57,7 @@
       var whereClause;
       var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
       if (searchString != '--Select--') {
+	      window.alert("Cheguei Aqui!");
         whereClause = "'tipoproj' = '" + searchString + "'";
       }
       layer_0.setOptions({
@@ -66,6 +67,7 @@
           where: whereClause
         }
       });
+	    google.maps.event.addDomListener(window, 'load', initialize);
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   
