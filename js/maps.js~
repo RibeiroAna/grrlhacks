@@ -1,0 +1,57 @@
+
+    var map;
+    var layer_0;
+    function initialize() {
+      map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: new google.maps.LatLng(-19.72280806988829, 6.152642000000014),
+        zoom: 2,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      layer_0 = new google.maps.FusionTablesLayer({
+        query: {
+          select: "col7",
+          from: "1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6"
+        },
+        map: map,
+        styleId: 3,
+        templateId: 3
+      });
+	var legend = document.createElement('div');
+        legend.id = 'legend';
+        legendContent(legend);
+        legend.index = 1;
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+    }
+// Generate the content for the legend
+      function legendContent(legend) {
+        var title = document.createElement('p');
+        title.innerHTML = legendTitle;
+        legend.appendChild(title);
+
+        for (var i in styles) {
+
+          var legendItem = document.createElement('div');
+
+          minMax.innerHTML = "4 + ' to ' + bucket.max";
+          legendItem.appendChild(minMax);
+
+          legend.appendChild(legendItem);
+        }
+      }
+
+    function changeMap_0() {
+      var whereClause;
+      var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
+      if (searchString != '--Select--') {
+        whereClause = "'tipoproj' = '" + searchString + "'";
+      }
+      layer_0.setOptions({
+        query: {
+          select: "col7",
+          from: "1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6",
+          where: whereClause
+        }
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  
