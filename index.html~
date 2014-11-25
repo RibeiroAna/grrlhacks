@@ -28,9 +28,10 @@
 <label class="layer-wizard-search-label">
         <span style = "color:white; position: relative;">----------------------------------------------------------Filtre os projetos:</span>
         <select id="search-string_0" onchange="changeMap_0(this.value);" style= "position: relative; align: left;">
-          <option value="--Select--">--Select--</option>
+          <option value="--Select--">Todos</option>
           <option value="Projeto liderado por mulher">Projeto liderado por mulher</option>
           <option value="Projeto para melhoria da vida das mulheres">Projeto para melhoria da vida das mulheres</option>
+	  <option value="ambos">Ambos</option>
         </select>
       </label> 
 </div>
