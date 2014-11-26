@@ -12,22 +12,24 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+		<script>
+		</script>
 	</head>
 	<body>
 <!-- Wrap all page content here -->
 <div id="wrap">
-  
 <header class="masthead">
     <div style="margin-top: 0px;">
      <div id = "legend">
-	<span>Legenda: 
-	<span style = "color:red;"> Por mulheres--//-- </span>
-	<span style = "color:yellow"> Para mulheres--//-- </span>
-	<span style = "color:purple"> Por mulheres e para mulheres </span>
+	<span>Legenda das cores dos pins do mapa:
+	<span style = "color:red;"> <i class="fa fa-map-marker"></i> Pin vermelho: para mulheres </span>
+	<span style = "color:yellow"> <i class="fa fa-map-marker"></i> Pin amarelo: Para mulheres</span>
+	<span style = "color:purple"> <i class="fa fa-map-marker"></i> Pin roxo: Por mulheres e para mulheres </span>
 	</span>      
 
 <label class="layer-wizard-search-label">
-        <span style = "color:white; position: relative;">----------------------------------------------------------Filtre os projetos:</span>
+        <span style = "color:white; position: relative;">>>>Filtre os projetos:</span>
         <select id="search-string_0" onchange="changeMap_0(this.value);" style= "position: relative; align: left;">
           <option value="--Select--">Todos</option>
           <option value="Projeto liderado por mulher">Projeto liderado por mulher</option>
@@ -35,6 +37,9 @@
 	  <option value="ambos">Por mulheres E para mulheres</option>
         </select>
       </label> 
+<a href="#" id="target" style = "position:absolute;right:0px;.hover:white; color:white;" onclick="updateMap()">
+	<i class="fa fa-history fa-1">Atualizar mapa</i> 
+</a>
 </div>
 <div id="googft-mapCanvas" style ="width:100%; height: 100%;">
 	<div id="legend"></div>
@@ -111,7 +116,7 @@
 <p class="text-center">
 <iframe width="500" height="300" scrolling="yes" frameborder="no" src="https://www.google.com/fusiontables/embedviz?viz=GVIZ&amp;t=TABLE&amp;q=select+col0%2C+col2%2C+col1%2C+col3%2C+col4%2C+col5%2C+col6%2C+col7%2C+col8+from+1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6&amp;containerId=googft-gviz-canvas"></iframe>
 </p>
-<p class="text-center"> Ainda é possível exportar todos os nossos dados para usar em outra aplicação, para isto, entre em <a href="section5">contato</a> conosco</p>
+<p class="text-center"> Como usamos o princípio de dados abertos e software livre, é possível exportar todos os nossos dados para usar em outras aplicações, para este site é usado a aplicação do Google chamada <a href="https://support.google.com/fusiontables">Google Fusion Tables</a>, o endereço da nossa, em qual os nossos dados estão localizados <a href="https://www.google.com/fusiontables/DataSource?docid=1qe77nXYBeClr60j_vcEcY2MTbKZfy-KIQq0EGV8Y#map:id=3">neste link</a>. <a href = "http://guides.library.duke.edu/content.php?pid=225682&sid=1891200">Aqui tem outro link</a> em inglês explicando como exportar dados de uma fusion table.
 </div>
 </div>  
 
@@ -172,9 +177,9 @@
 <div class="container">
       
       <hr>
-      <h4>
-        Feito com <a href="http://getbootstrap.com/">Bootstrap</a>, com a cortesia de <a href="http://www.bootply.com">Bootply.com</a>
-      </h4>      
+      <h6>
+        Baseado em <a href="http://getbootstrap.com/">Bootstrap</a>, temo feito por <a href="http://www.bootply.com">Bootply.com</a>, fontes, mapas e formulários da <a href="http://google.com.br">Google</a> e íncones da <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>
+      </h64>      
  </div><!--/col-->
 </div><!--/container-->
   
@@ -182,7 +187,7 @@
 
 <div id="footer">
   <div class="container">
-    <p class="text-muted">Todos os dados aqui divulgados PODEM ser copiados e reproduzidos desde que a fonte seja citada</p>
+    <p class="text-muted">Todos os dados e textos aqui divulgados PODEM ser copiados e reproduzidos desde que a fonte seja citada</p>
   </div>
 </div>
 

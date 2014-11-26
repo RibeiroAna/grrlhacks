@@ -1,0 +1,11 @@
+(function() {
+
+  document.getElementById("target").onclick = function() {
+    var wnd = window.open("http://stackoverflow.com");
+    setTimeout(function() {
+      wnd.close();
+    }, 5000);
+    return false;
+  };
+
+})();

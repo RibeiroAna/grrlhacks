@@ -53,7 +53,21 @@
     }
   }
 
+	function updateMap() {
 
+			   var width = 100;
+  			   var height = 100;
+ 			   var left = 99;
+ 			   var top = 99;
+			  document.getElementById("target").onclick = function() {
+			    var wnd = window.open("https://www.google.com/fusiontables/DataSource?docid=1vYQp4N5B9jB-7X7e22UJWgqVTC7rlZY3aK3vI7n6#map:id=5",'janela', 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no');
+			    setTimeout(function() {
+			      wnd.close();
+			    }, 8000);
+			    setTimeout(function(){location.reload();}, 17000)
+			  };
+
+			};
 
 
     function changeMap_0() {
