@@ -1,7 +1,15 @@
-
-    var map;
-    var layer_0;
-
+/*<!-- Copyright 2014 de Ana Maria da Costa Ribeiro
+Este arquivo é parte do programa  Hackgrrls. O hackgirls é um software livre;
+você pode redistribuí-lo e/ou modificá-lo dentro dos termos da [GNU General Public License OU 
+GNU Affero General Public License] como publicada pela Fundação do Software Livre (FSF); na versão 
+3 da Licença. Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; 
+sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a licença 
+para maiores detalhes. Você deve ter recebido uma cópia da [GNU General Public License OU 
+GNU Affero General Public License], sob o título "LICENCA.txt", 
+unto com este programa, se não, acesse http://www.gnu.org/licenses/-->*/
+var map;
+var layer_0;
+    
  function initialize() {
     google.maps.visualRefresh = true;
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
